@@ -6,14 +6,18 @@ class Gamer {
     this.experience = experience;    
     this.#game = "interesting Game"
     }
-    get theGame (){
+    get #theGame (){
         return this.#game
     }
-    set theGame(thisYearsGame) {
+    set #theGame(thisYearsGame) {
         this.#game = thisYearsGame
     }
-    
+    log(year){
+       return `this game was invented in ${this.#theGame = year}`
+    }
+  
 }
+
 class firstGamer extends Gamer{
     constructor(name, experience){
         super(name, experience)
@@ -34,5 +38,5 @@ console.log(uno)
 
 let senior = new Gamer("harry", 15)
 console.log(senior)
-
-console.log(senior.theGame) // accessing #game through a method created in parent's class that gets that private field
+// senior.#theGame(2000) //can this work?
+console.log(senior.log('1988')) // accessing #game through a method created in parent's class that gets that private field
