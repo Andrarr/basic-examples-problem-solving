@@ -1,20 +1,19 @@
-const mouse = {
-
-    [Symbol.iterator]: function() { 
-        let floor = 0;
+const mouseSteps = {
+    [Symbol.iterator]: function () {
+        let step = 0;
         return {
             next() {
-                floor++;
-                if(floor == 1){
-                    return {value: floor, done:false}
+                step++;
+                if (step == 1) {
+                    return { value: step, done: false }
                 }
-              
-                return { value: '', done: true };  
+
+                return { value: '', done: true };
             }
         }
-        
     }
 }
-for (i of mouse){
-    console.log(i)
+
+for (step of mouseSteps) {
+    console.log(step)
 }
